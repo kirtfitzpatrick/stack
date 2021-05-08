@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VERSION=0.0.1
+VERSION=0.0.2
 
 usage () {
   echo "stack [-hV]"
@@ -26,8 +26,11 @@ function stack_new {
         return 1
     fi
 
-    eval "declare -ag _stack_$1"
-    eval "declare -ig _stack_$1_i"
+    # I don't know why, but older versions of bash complain about the -g
+    # but somehow still work with it. And if I remove it, it breaks. ¯\_(ツ)_/¯ 
+    # Sweeping the under the /dev/null rug because I don't have time for it.
+    eval "declare -ag _stack_$1 2>/dev/null"
+    eval "declare -ig _stack_$1_i 2>/dev/null"
     eval "let _stack_$1_i=0"
     return 0
 }

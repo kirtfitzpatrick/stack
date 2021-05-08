@@ -1,6 +1,6 @@
 {
   "name": "stack",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A stack library ported from gist by Brian Clapper",
   "install": "install -b stack.sh ${PREFIX:-/usr/local}/bin/stack",
   "scripts": [ "stack.sh" ]
