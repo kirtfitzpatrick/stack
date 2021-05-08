@@ -1,6 +1,6 @@
 # stack
 
-A stack library ported from gist by Brian Clapper
+bash stack library ported to bpkg from gist by Brian Clapper
 
 # Install
 
